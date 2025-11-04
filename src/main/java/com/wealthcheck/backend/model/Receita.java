@@ -6,16 +6,8 @@ import jakarta.persistence.*;
 @Table(name = "receita")
 public class Receita extends TransacaoFinanceira {
 
-    @SequenceGenerator(
-            name = "SEQ_RECEITA",
-            sequenceName = "SEQ_RECEITA",
-            allocationSize = 1
-    )
-
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "SEQ_RECEITA")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "id_receita")
     private Integer id;

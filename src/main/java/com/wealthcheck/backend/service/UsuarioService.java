@@ -37,8 +37,6 @@ public class UsuarioService {
         existente.setSenha(usuarioAtualizado.getSenha());
         existente.setTelefone(usuarioAtualizado.getTelefone());
         existente.setDataNascimento(usuarioAtualizado.getDataNascimento());
-        existente.setCriadoEm(usuarioAtualizado.getCriadoEm());
-        existente.setAtualizadoEm(usuarioAtualizado.getAtualizadoEm());
         return usuarioRepository.save(existente);
     }
 
