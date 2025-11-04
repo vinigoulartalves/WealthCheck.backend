@@ -9,19 +9,19 @@ import java.time.LocalDateTime;
 @Table(name = "usuario")
 public class Usuario {
 
-    @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY,
-            generator = "SEQ_USUARIO")
-
     @SequenceGenerator(
             name = "SEQ_USUARIO",
             sequenceName = "SEQ_USUARIO",
             allocationSize = 1
     )
 
+    @Id
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "SEQ_USUARIO")
+
     @Column(name="id_usuario")
-    private int idUsuario;
+    private Integer idUsuario;
     private String nome;
     private String email;
     private String senha;
@@ -37,11 +37,11 @@ public class Usuario {
     private LocalDateTime atualizadoEm;
 
     // Getters e Setters
-    public int getIdUsuario() {
+    public Integer getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
+    public void setIdUsuario(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
 
