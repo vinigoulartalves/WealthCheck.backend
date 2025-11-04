@@ -9,17 +9,8 @@ import java.time.LocalDateTime;
 @Table(name = "usuario")
 public class Usuario {
 
-    @SequenceGenerator(
-            name = "SEQ_USUARIO",
-            sequenceName = "SEQ_USUARIO",
-            allocationSize = 1
-    )
-
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "SEQ_USUARIO")
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_usuario")
     private Integer idUsuario;
     private String nome;
@@ -99,6 +90,18 @@ public class Usuario {
 
     public void setAtualizadoEm(LocalDateTime atualizadoEm) {
         this.atualizadoEm = atualizadoEm;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        LocalDateTime now = LocalDateTime.now();
+        this.criadoEm = now;
+        this.atualizadoEm = now;
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.atualizadoEm = LocalDateTime.now();
     }
 
 }

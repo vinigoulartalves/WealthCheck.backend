@@ -8,16 +8,8 @@ import java.time.LocalDate;
 @Table(name = "despesa")
 public class Despesa extends TransacaoFinanceira {
 
-    @SequenceGenerator(
-            name = "SEQ_DESPESA",
-            sequenceName = "SEQ_DESPESA",
-            allocationSize = 1
-    )
-
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "SEQ_DESPESA")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "id_despesa")
     private Integer id;
