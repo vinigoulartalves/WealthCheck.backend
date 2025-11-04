@@ -1,0 +1,581 @@
+{
+  "info": {
+    "_postman_id": "5f3c2f1f-3a77-4b09-9a65-545c82b81a3e",
+    "name": "WealthCheck Backend API",
+    "description": "Coleção Postman para testar os endpoints REST do WealthCheck Backend.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Usuários",
+      "description": "Operações de CRUD para a entidade de usuários.",
+      "item": [
+        {
+          "name": "Criar usuário",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João da Silva\",\n  \"email\": \"joao.silva@example.com\",\n  \"senha\": \"senhaSegura123\",\n  \"telefone\": \"(11) 91234-5678\",\n  \"dataNascimento\": \"1990-05-10\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/usuarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar usuários",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/usuarios",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar usuário por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/{{usuarioId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "{{usuarioId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar usuário",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João da Silva\",\n  \"email\": \"joao.silva@example.com\",\n  \"senha\": \"senhaAtualizada456\",\n  \"telefone\": \"(11) 98765-4321\",\n  \"dataNascimento\": \"1990-05-10\",\n  \"criadoEm\": \"2024-01-01T09:00:00\",\n  \"atualizadoEm\": \"2024-05-10T10:30:00\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/{{usuarioId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "{{usuarioId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir usuário",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/usuarios/{{usuarioId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "usuarios",
+                "{{usuarioId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Receitas",
+      "description": "Operações para receitas financeiras.",
+      "item": [
+        {
+          "name": "Criar receita",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idUsuario\": 1,\n  \"valor\": 3500.00,\n  \"data\": \"2024-05-01\",\n  \"descricao\": \"Salário mensal\",\n  \"categoria\": \"Salário\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/receitas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "receitas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar receitas",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/receitas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "receitas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar receita por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/receitas/{{receitaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "receitas",
+                "{{receitaId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar receita",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idUsuario\": 1,\n  \"valor\": 3600.00,\n  \"data\": \"2024-05-01\",\n  \"descricao\": \"Salário mensal ajustado\",\n  \"categoria\": \"Salário\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/receitas/{{receitaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "receitas",
+                "{{receitaId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir receita",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/receitas/{{receitaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "receitas",
+                "{{receitaId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Despesas",
+      "description": "Operações para despesas registradas.",
+      "item": [
+        {
+          "name": "Criar despesa",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idUsuario\": 1,\n  \"valor\": 250.75,\n  \"data\": \"2024-05-05\",\n  \"descricao\": \"Compras no supermercado\",\n  \"categoria\": \"Alimentação\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/despesas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "despesas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar despesas",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/despesas",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "despesas"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar despesa por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/despesas/{{despesaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "despesas",
+                "{{despesaId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar despesa",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idUsuario\": 1,\n  \"valor\": 255.90,\n  \"data\": \"2024-05-05\",\n  \"descricao\": \"Compras no supermercado (atualizado)\",\n  \"categoria\": \"Alimentação\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/despesas/{{despesaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "despesas",
+                "{{despesaId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir despesa",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/despesas/{{despesaId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "despesas",
+                "{{despesaId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Investimentos",
+      "description": "Operações para controlar investimentos.",
+      "item": [
+        {
+          "name": "Criar investimento",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idUsuario\": 1,\n  \"valor\": 1000.00,\n  \"data\": \"2024-04-15\",\n  \"descricao\": \"Aporte mensal\",\n  \"tipoInvestimento\": \"Tesouro Direto\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/investimentos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "investimentos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar investimentos",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/investimentos",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "investimentos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar investimento por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/investimentos/{{investimentoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "investimentos",
+                "{{investimentoId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar investimento",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idUsuario\": 1,\n  \"valor\": 1200.00,\n  \"data\": \"2024-04-15\",\n  \"descricao\": \"Aporte mensal ajustado\",\n  \"tipoInvestimento\": \"Tesouro Direto\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/investimentos/{{investimentoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "investimentos",
+                "{{investimentoId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir investimento",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/investimentos/{{investimentoId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "investimentos",
+                "{{investimentoId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Objetivos Financeiros",
+      "description": "Operações para objetivos financeiros cadastrados.",
+      "item": [
+        {
+          "name": "Criar objetivo financeiro",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idUsuario\": 1,\n  \"descricao\": \"Montar reserva de emergência\",\n  \"valorMeta\": 15000.00,\n  \"dataInicio\": \"2024-01-01\",\n  \"dataPrazo\": \"2025-12-31\",\n  \"status\": \"EM_ANDAMENTO\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/objetivos-financeiros",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "objetivos-financeiros"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Listar objetivos financeiros",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/objetivos-financeiros",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "objetivos-financeiros"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Buscar objetivo financeiro por ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{baseUrl}}/objetivos-financeiros/{{objetivoFinanceiroId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "objetivos-financeiros",
+                "{{objetivoFinanceiroId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Atualizar objetivo financeiro",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idUsuario\": 1,\n  \"descricao\": \"Montar reserva de emergência\",\n  \"valorMeta\": 18000.00,\n  \"dataInicio\": \"2024-01-01\",\n  \"dataPrazo\": \"2025-12-31\",\n  \"status\": \"EM_ANDAMENTO\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/objetivos-financeiros/{{objetivoFinanceiroId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "objetivos-financeiros",
+                "{{objetivoFinanceiroId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Excluir objetivo financeiro",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}/objetivos-financeiros/{{objetivoFinanceiroId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "objetivos-financeiros",
+                "{{objetivoFinanceiroId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    },
+    {
+      "key": "usuarioId",
+      "value": "1"
+    },
+    {
+      "key": "receitaId",
+      "value": "1"
+    },
+    {
+      "key": "despesaId",
+      "value": "1"
+    },
+    {
+      "key": "investimentoId",
+      "value": "1"
+    },
+    {
+      "key": "objetivoFinanceiroId",
+      "value": "1"
+    }
+  ]
+}
