@@ -7,15 +7,7 @@ import jakarta.persistence.*;
 public class Receita extends TransacaoFinanceira {
 
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY,
-            generator = "SEQ_RECEITA")
-
-    @SequenceGenerator(
-            name = "SEQ_RECEITA",
-            sequenceName = "SEQ_RECEITA",
-            allocationSize = 1
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "id_receita")
     private Integer id;

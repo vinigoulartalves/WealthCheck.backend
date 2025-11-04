@@ -8,18 +8,12 @@ import java.time.LocalDate;
 public class ObjetivoFinanceiro {
 
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY,
-            generator = "SEQ_OBJETIVO")
-    @SequenceGenerator(
-            name = "SEQ_OBJETIVO",
-            sequenceName = "SEQ_OBJETIVO",
-            allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "id_objetivo")
     private Integer idObjetivo;
 
-    @Column(name = "id_usuario", nullable = false)
+    @Column(name = "usuario_id_usuario", nullable = false)
     private Integer idUsuario;
 
     @Column(name = "descricao", length = 255, nullable = false)

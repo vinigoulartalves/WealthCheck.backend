@@ -9,15 +9,7 @@ import java.time.LocalDate;
 public class Despesa extends TransacaoFinanceira {
 
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY,
-            generator = "SEQ_DESPESA")
-
-    @SequenceGenerator(
-            name = "SEQ_DESPESA",
-            sequenceName = "SEQ_DESPESA",
-            allocationSize = 1
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "id_despesa")
     private Integer id;

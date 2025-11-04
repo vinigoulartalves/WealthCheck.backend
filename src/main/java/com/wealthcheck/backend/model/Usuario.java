@@ -10,18 +10,9 @@ import java.time.LocalDateTime;
 public class Usuario {
 
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY,
-            generator = "SEQ_USUARIO")
-
-    @SequenceGenerator(
-            name = "SEQ_USUARIO",
-            sequenceName = "SEQ_USUARIO",
-            allocationSize = 1
-    )
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_usuario")
-    private int idUsuario;
+    private Integer idUsuario;
     private String nome;
     private String email;
     private String senha;
@@ -37,11 +28,11 @@ public class Usuario {
     private LocalDateTime atualizadoEm;
 
     // Getters e Setters
-    public int getIdUsuario() {
+    public Integer getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
+    public void setIdUsuario(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
 
@@ -99,6 +90,18 @@ public class Usuario {
 
     public void setAtualizadoEm(LocalDateTime atualizadoEm) {
         this.atualizadoEm = atualizadoEm;
+    }
+
+    @PrePersist
+    protected void onCreate() {
+        LocalDateTime now = LocalDateTime.now();
+        this.criadoEm = now;
+        this.atualizadoEm = now;
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.atualizadoEm = LocalDateTime.now();
     }
 
 }
