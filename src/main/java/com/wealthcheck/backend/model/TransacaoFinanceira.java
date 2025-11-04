@@ -6,9 +6,9 @@ import java.time.LocalDate;
 @MappedSuperclass
 public abstract class TransacaoFinanceira {
 
-    @Column(name = "id_usuario")
-
+    @Column(name = "usuario_id_usuario")
     private Integer idUsuario;
+
     private double valor;
     private LocalDate data;
     private String descricao;

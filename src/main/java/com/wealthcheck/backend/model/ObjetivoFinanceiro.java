@@ -19,7 +19,7 @@ public class ObjetivoFinanceiro {
     @Column(name = "id_objetivo")
     private Integer idObjetivo;
 
-    @Column(name = "id_usuario", nullable = false)
+    @Column(name = "usuario_id_usuario", nullable = false)
     private Integer idUsuario;
 
     @Column(name = "descricao", length = 255, nullable = false)
