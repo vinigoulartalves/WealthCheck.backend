@@ -7,14 +7,15 @@ import java.time.LocalDate;
 @Table(name = "objetivo_financeiro")
 public class ObjetivoFinanceiro {
 
-    @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY,
-            generator = "SEQ_OBJETIVO")
     @SequenceGenerator(
             name = "SEQ_OBJETIVO",
             sequenceName = "SEQ_OBJETIVO",
             allocationSize = 1)
+
+    @Id
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "SEQ_OBJETIVO")
 
     @Column(name = "id_objetivo")
     private Integer idObjetivo;
